@@ -1,7 +1,9 @@
-FROM node:8.16.1
+FROM python:3.8.13
 
-RUN mkdir /src
+RUN pip3 install numpy
 
-COPY hello.js /src
+Run mkdir -p /home/alpha/code
 
-CMD ["node", "/src/hello.js"]
+COPY ./main.py /home/alpha/code
+
+CMD ["python", "/home/alpha/code/main.py"]
